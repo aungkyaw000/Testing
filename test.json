@@ -2,8 +2,8 @@
   "keys": [
     {
       "kty": "oct",
-      "k": "0022948466437263d5878ffbffdc48db",
-      "kid": "c8420ad0ef49217972e64b4cdb2e6b92"
+      "k": "c8420ad0ef49217972e64b4cdb2e6b92",
+      "kid": "0022948466437263d5878ffbffdc48db"
     }
   ],
   "type": "temporary"
