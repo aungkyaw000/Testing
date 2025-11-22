@@ -1,0 +1,6 @@
+#EXTM3U
+#EXTINF:-1, Channel Name
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=6fe4b567ec9b467a888a089600c93f55:b8612265451c8c462fb6b55ad3a6b6d8
+https://cdn-vl-gcp-spinco-e-token-no-ssai-01.vos360.video/Content/DASH_DASH_ENC/Live/channel(4e41f6af-4b86-2aac-c351-c1250b14b344)/master.mpd?hdntl=exp=1763902579~acl=%2f*~data=hdntl~hmac=7225568ded96ec0de6eae07b6459be713924baccf0b2c462947e877bb97fa3d4
