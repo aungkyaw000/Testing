@@ -38,7 +38,7 @@ echo -e "\n${YELLOW}==========================================${NC}"
 echo -e "${GREEN}၄။ Public & Private Key (Reality အတွက်) ထုတ်ပေးနေပါသည်...${NC}"
 echo -e "${YELLOW}==========================================${NC}"
 # Marzban container အတွင်းရှိ xray ဖြင့် key ထုတ်ခြင်း
-docker exec -it marzban xray x25519
+docker exec -it marzban-marzban-1 xray x25519
 echo -e "${CYAN}(အထက်ပါ Private Key နှင့် Public Key ကို သေချာမှတ်ထားပါ/Copy ကူးထားပါ)${NC}"
 
 echo -e "\n${YELLOW}==========================================${NC}"
