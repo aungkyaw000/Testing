@@ -33,7 +33,8 @@ echo -e "\n${YELLOW}==========================================${NC}"
 echo -e "${GREEN}၃။ Marzban Admin အကောင့် ဖန်တီးနေပါသည်...${NC}"
 echo -e "${YELLOW}==========================================${NC}"
 # Username နှင့် Password ကို အသေ (Hardcoded) ထည့်သွင်းခြင်း
-marzban cli admin create -u "aktech" -p "aktech" --sudo
+# Marzban ကို Password (aktech) နှစ်ခါ အလိုအလျောက် ရိုက်ထည့်ခိုင်းခြင်း
+echo -e "aktech\naktech" | sudo marzban cli admin create -u "aktech" --sudo
 echo -e "${GREEN}Admin အကောင့် (aktech) အား အောင်မြင်စွာ ဖန်တီးပြီးပါပြီ။${NC}"
 
 echo -e "\n${YELLOW}==========================================${NC}"
