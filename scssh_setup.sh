@@ -98,6 +98,24 @@ sudo systemctl restart nginx
 # SSL ကို လူကိုယ်တိုင် ဝင်မရိုက်ရဘဲ Auto အသက်သွင်းခြင်း
 sudo certbot --nginx -d $DOMAIN_NAME --non-interactive --agree-tos -m admin@$DOMAIN_NAME
 
+
+echo -e "\n${YELLOW}==========================================${NC}"
+echo -e "${GREEN}၈။ docker-compose.yml သို့ SSL Volume ထည့်သွင်းနေပါသည်...${NC}"
+echo -e "${YELLOW}==========================================${NC}"
+COMPOSE_FILE="/opt/marzban/docker-compose.yml"
+
+# File ထဲမှာ အဆိုပါစာကြောင်း ပါ/မပါ အရင်စစ်ဆေးပါမည် (Script ခဏခဏ run ရင် နှစ်ကြောင်းထပ်မဖြစ်အောင်ပါ)
+if ! grep -q "/etc/letsencrypt:/etc/letsencrypt:ro" "$COMPOSE_FILE"; then
+    # 'volumes:' ဆိုတဲ့ စာကြောင်းရဲ့အောက်မှာ 6 spaces ခြားပြီး Auto ရေးထည့်ပါမည်
+    sudo sed -i '/volumes:/a\      - /etc/letsencrypt:/etc/letsencrypt:ro' "$COMPOSE_FILE"
+    echo -e "${GREEN}SSL Volume path ကို docker-compose.yml တွင် အောင်မြင်စွာ ထည့်သွင်းပြီးပါပြီ။${NC}"
+else
+    echo -e "${CYAN}SSL Volume path သည် docker-compose.yml တွင် ရှိနှင့်ပြီးသား ဖြစ်ပါသည်။${NC}"
+fi
+
+# Volume အသစ် ချိတ်ဆက်မှု အသက်ဝင်စေရန် Marzban အား Restart ပြုလုပ်ခြင်း
+marzban restart
+
 echo -e "\n${CYAN}*************************************************${NC}"
 echo -e "${GREEN}🎉 အားလုံးပြီးစီးပါပြီ! Aung Kyaw ရဲ့ Marzban ကို လုံခြုံရေးအပြည့်ဖြင့် အသုံးပြုနိုင်ပါပြီ။${NC}"
 echo -e "${YELLOW}👉 URL      : https://$DOMAIN_NAME${NC}"
